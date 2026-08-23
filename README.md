@@ -53,4 +53,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## ✉️ Contact
 
 Andres Betancourt - [Linkedin](https://www.linkedin.com/in/andres-bet-xanth/) - bet.and.xanth@gmail.com
-Project Link: [https://github.com](https://github.com)
+Project Link: [https://github.com/Xanth-64/shoestring](https://github.com/Xanth-64/shoestring)
