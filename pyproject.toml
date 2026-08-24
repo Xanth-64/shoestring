@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.dynamic]
+version = { attr = "version.__version__" }
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+python-semantic-release = "~=10.6.1"
+
+[project]
+name = "shoelace"
+dynamic = ["version"]
+description = "Package to test semantic versioning in a Python Project."
+readme = "README.md"
+requires-python = ">=3.14"
+license = { file = "LICENSE" }
+authors = [{ name = "Andres Betancourt", email = "bet.and.xanth@gmail.com" }]
+maintainers = [
+    { name = "Andres Betancourt", email = "bet.and.xanth@gmail.com" },
+]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.14",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+ci = []
+dev = ["python-semantic-release ~= 10.6.1"]
+
+[tool.semantic_release]
+commit_message = "build(release):{version} [skip ci]"
+version_variables = ["version.py:__version__"]
+
+[tool.semantic_release.branches.main]
+match = "(main|master)"
+prerelease = false
+
+[tool.semantic_release.branches.dev]
+match = "(dev|develop|development)"
+prerelease = true
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = ["Merge"]
