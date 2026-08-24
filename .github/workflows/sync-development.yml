@@ -3,7 +3,8 @@ name: Sync Development Branch
 on:
   repository_dispatch:
     types: [sync-development]
-
+permissions:
+  contents: write
 jobs:
   sync-development:
     runs-on: ubuntu-latest
